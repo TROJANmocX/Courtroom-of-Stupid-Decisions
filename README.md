@@ -1,4 +1,4 @@
-# ⚖️ Courtroom of Stupid Decisions
+# Courtroom of Stupid Decisions
 
 <div align="center">
 
@@ -10,7 +10,7 @@
  \____\___/ \__,_|_|    \__|_|  \___/ \___/|_| |_| |_|    |_|/_/_/  |___/\__,_|\__,_|   |_| |____/ \___|\___|_|___/_|\___/|_| |_|___/
 ```
 
-**Where your most embarrassing moments, late-night blunders, and awkward interactions face fictional justice.**
+**Where your most embarrassing blunders, 3 AM intrusive thoughts, and unhinged life choices get dragged in front of a fictional jury.**
 
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -21,438 +21,355 @@
 [![SQLite](https://img.shields.io/badge/SQLite-SQLAlchemy-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-[Features](#-key-features) • [Characters](#-the-courtroom-cast) • [Tech Stack](#-technology-stack) • [Quick Start](#-quick-start) • [API Reference](#-api-reference) • [Architecture](#-architecture--data-flow) • [Configuration](#-configuration--environment)
+[The Lowdown](#the-lowdown) • [The Courtroom Clowns](#the-courtroom-clowns) • [Crime Categories](#the-stupidity-index--crime-categories) • [Tech Stack](#why-did-we-build-this-stack) • [Quick Start](#quick-start-run-this-disaster) • [API Reference](#api-reference-for-the-nerds) • [Config](#environment--secrets)
 
 </div>
 
 ---
 
-## 📖 Overview
+## The Lowdown
 
-**Courtroom of Stupid Decisions** is an interactive full-stack comedy application that puts your everyday bad decisions on trial.
+Let us be completely honest with each other: you have done some genuinely unhinged stuff. 
 
-Whether you:
+- You waved back with full main-character energy at someone who was looking at their dog behind you, and instead of taking the L, you morphed it into a full-body yoga stretch.
+- You rehearsed a heated argument in the shower for forty-five minutes, hit all your talking points, and somehow still lost the debate against yourself.
+- The airport TSA agent told you "Have a safe flight" and you replied "You too," instantly sealing your fate as an NPC.
+- You typed out a three-paragraph novel to your situationship, stared at it for twenty minutes, deleted it, and sent "k" instead.
 
-- Waved back at someone who was actually waving at the person standing behind you,
-- Rehearsed an imaginary argument in the shower for 30 minutes and still managed to lose,
-- Said _"you too"_ when the movie theater usher handed you your popcorn and told you to enjoy the show, or
-- Pretended to understand a joke for 45 awkward minutes rather than admit you didn't get it...
+**Courtroom of Stupid Decisions** takes your most catastrophic social fumbles and puts them through a full judicial kangaroo court. You confess your sins, pick how aggressively you want to be roasted, and let our procedural trial engine cook you until there is nothing left of your dignity.
 
-...**Judge Reginald "Randy" Trash-Panda III** and his chaotic courtroom staff are ready to hear the prosecution, review the evidence, dismiss the defense's pathetic excuses, and hand down an absurd, legally non-binding sentence.
-
-> **💡 Zero-Config AI Fallback:**
-> The app includes both **AI-driven generation** (Google Gemini & OpenAI) and an extensive **procedural template fallback engine**. You can run and enjoy the full experience completely offline without needing any API keys!
+> **Zero-Dollar Broke Mode Included:**
+> You do not even need an AI API key. If you are down bad and cannot afford OpenAI or Gemini tokens, our offline template engine steps in with hardcoded generational roasts, completely free and offline.
 
 ---
 
-## ✨ Key Features
+## What This App Actually Does
 
-- 🦝 **Unforgiving Raccoon Judge**: Sarcastic, unpredictable, obsessed with shiny objects, prone to falling asleep mid-trial, and fond of handing out bizarre punishments.
-- 🎭 **Three Courtroom Personalities**:
-  - `Friendly` — The court is weirdly supportive and gives gentle nudges.
-  - `Brutally Honest` — Zero mercy, sharp sarcasm, ruthless legal takedowns.
-  - `Completely Unhinged` — Pure legal chaos, irrelevant tangents, and trash-can justice.
-- 🏷️ **Automated Crime Classification**: Classifies confessions into categories like _Social Embarrassment_, _Procrastination_, _Questionable Texting_, _Unnecessary Overthinking_, _Petty Revenge_, _Academic Disaster_, and _General Stupidity_.
-- 📊 **Stupidity Severity Meter (1–10)**: Dynamic scoring that measures the magnitude of the infraction and determines the verdict category.
-- 🔍 **Exhibit Evidence Generation**: Uncovers incriminating Exhibit items (e.g., Exhibit A: _The Incident Report_, Exhibit B: _Deleted Drafts & Incognito Searches_, Exhibit C: _Awkward Silence Logs_).
-- ⚔️ **Interactive Argument Duel**:
-  - **Prosecution**: Vicky Overkill treats your blunder like the trial of the century.
-  - **Defense**: Greg Bumble tries his best, but accidentally incriminates you with every argument.
-- ⚡ **Random Courtroom Events**: Objections to sandwiches, surprise nap recesses, missing documents, and self-sabotaging objections.
-- 🔨 **Dramatic Animated Verdict Stamps**: Oversized stamped verdicts (`GUILTY`, `MOSTLY GUILTY`, or `NOT GUILTY`) with custom animation effects.
-- 📜 **Absurd Sentences**: "Sentenced to re-live this exact moment at 3 AM every night for the next five years."
-- 📁 **Case Archive & History**: Persistent SQLite database storing full case records, verdicts, dates, and severity ratings with one-click deletion and case review.
-- 🎲 **"Confess a Random Crime" Button**: Instant inspiration button pulling hilarious confessions if your own memory goes blank.
+- **The Stand**: You drop your confession into the dock, choose how toxic you want the room to be (Friendly, Brutally Honest, or Unhinged), and submit your case to the docket.
+- **Auto-Crime Profiling**: The backend categorizes your blunder into clinical diagnostic terms (e.g., "Aggravated Social Awkwardness", "Premeditated Deadline Destruction", "Texting Under the Influence").
+- **Stupidity Severity Meter (1 to 10)**: A scientific, peer-reviewed measurement of exactly how cooked you are.
+- **Exhibit Generation**: Synthetic evidence pulled directly from your questionable life choices (Exhibit A: Incident Report, Exhibit B: Incognito Tabs, Exhibit C: Secondhand Embarrassment Witness Logs).
+- **Prosecution vs. Defense Yap Session**: Vicky Overkill treats your typo like high treason, while Greg Bumble accidentally enters his grocery list as evidence and proves the prosecution right.
+- **Mid-Trial Drama**: Random courtroom interruptions, objection wars over irrelevant sandwiches, and the judge taking a twenty-minute recess to chase a laser pointer.
+- **The Gavel Drop**: An animated, screen-shaking verdict stamp (GUILTY, MOSTLY GUILTY, or the rarest outcome in human history, NOT GUILTY).
+- **The Sentence**: Absurd punishments designed to haunt you at 3 AM for the next half-decade.
+- **The Case Archive**: Every humiliation saved to local SQLite so you can review your rap sheet whenever you feel like your self-esteem is getting too high.
+- **Panic Button / Random Generator**: When your brain freezes and you cannot remember your latest L, click the randomize button and let the engine invent a catastrophe for you.
 
 ---
 
-## 👥 The Courtroom Cast
+## The Courtroom Clowns
 
-| Character                                     | Role                     | Profile & Personality                                                                                                                                                              |
-| --------------------------------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Judge Reginald "Randy" Trash-Panda III** 🦝 | **Presiding Judge**      | Sarcastic raccoon in judicial robes. Loves shiny objects, regularly takes 20-minute recesses to chase pen caps, occasionally eats evidence, and issues disproportionate sentences. |
-| **Victoria "Vicky" Overkill** ⚔️              | **Prosecuting Attorney** | Treats every awkward text and mild procrastination like treason. Slams manila folders with "GOTCHA" written in red sharpie. Frequently objects to defendants existing.             |
-| **Greg Bumble, Esq.** 🛡️                      | **Defense Attorney**     | Heart is in the right place; legal competence is nowhere to be found. Routinely enters his own grocery list as Exhibit B and accidentally proves the prosecution's point.          |
+| Personnel | Role | Background Check & Vibe |
+|---|---|---|
+| **Judge Reginald "Randy" Trash-Panda III** | Presiding Judge | A literal North American raccoon wearing an oversized judicial wig. Has zero law degrees, accepts shiny garbage as bribes, nods off during closing arguments, and delivers completely unhinged sentences with extreme prejudice. |
+| **Victoria "Vicky" Overkill** | Prosecuting Attorney | Treats every awkward high-five like a felony indictment. Slams manila folders on desks, writes "GOTCHA" in red marker across legitimate receipts, and will object to the concept of breathing if it helps her win rate. |
+| **Greg Bumble, Esq.** | Defense Attorney | Down bad, chronically confused, and somehow still licensed to practice law. Means well, but will accidentally submit your deleted search history to the judge and whisper "my bad" while you get handed a five-year sentence. |
 
 ---
 
-## ⚖️ Crime Categories & Verdicts
+## The Stupidity Index & Crime Categories
 
-### Categories
+The prosecution files charges under these recognized categories of human malfunction:
 
-- 😳 **Social Embarrassment** — Public tripping, wave mishaps, misheard greetings.
-- ⏰ **Procrastination** — Starting 10-page essays 45 minutes before submission.
-- 📱 **Questionable Texting** — Double-texting paragraphs, risky late-night messages, leaving moms on read.
-- 🧠 **Unnecessary Overthinking** — Constructing 14 doom scenarios based on one period in a text.
-- 😈 **Petty Revenge** — Passive-aggressive refrigerator note wars, malicious compliance.
-- 📚 **Academic Disasters** — Cramming entire syllabi on the bus ride to the exam.
-- 🤦 **General Stupidity** — All other inexplicable decisions defying human logic.
+- **Social Embarrassment**: Walking into glass doors, tripping on flat pavement, waving at strangers, making eye contact through bathroom stall gaps.
+- **Procrastination Olympics**: Starting a semester project at 3:45 AM when it is due at 8:00 AM, cleaning your baseboards instead of studying.
+- **Questionable Texting**: Double-texting paragraphs, drunk texting your ex about conspiracy theories, leaving read receipts on for three business weeks.
+- **Unnecessary Overthinking**: Spending four hours decoding a three-word text message, simulating 87 worst-case scenarios before asking for extra ketchup.
+- **Petty Revenge**: Malicious compliance, leaving passive-aggressive Sticky Notes on communal milk, sabotaging WiFi routers for five minutes of peace.
+- **Academic Disasters**: Reading the textbook for the first time while the professor passes out the midterm, putting your name on the group chat and nothing else.
+- **General Stupidity**: Actions so devoid of logic that modern science cannot categorize them.
 
-### Verdict Scale
+### Verdict Thresholds
 
 ```
 Severity:   [ 1 ────── 3 ]       [ 4 ────── 6 ]       [ 7 ────── 10 ]
 Verdict:     NOT GUILTY          MOSTLY GUILTY            GUILTY
-Consequence: Suspicious Mercy    Probation & Chores    Eternal Cringe
+Status:      Suspicious Fluke    Common Skill Issue   Irredeemably Cooked
 ```
 
 ---
 
-## 🛠️ Technology Stack
+## Why Did We Build This Stack?
 
-### Backend
+We built a modern, responsive, high-performance distributed architecture just to tell people their shower arguments are embarrassing:
 
-- **Framework**: [FastAPI](https://fastapi.tiangolo.com/) (Python 3.11+)
-- **ASGI Server**: [Uvicorn](https://www.uvicorn.org/) with hot reloading
-- **ORM & Database**: [SQLAlchemy 2.0](https://www.sqlalchemy.org/) with [SQLite](https://sqlite.org/)
-- **Data Validation**: [Pydantic v2](https://docs.pydantic.dev/) & `pydantic-settings`
-- **AI Integrations**: [Google Generative AI](https://ai.google.dev/) (Gemini Flash) & [OpenAI](https://openai.com/) (GPT-4o / GPT-3.5)
-- **Image Generation / Cards**: [Pillow (PIL)](https://python-pillow.org/)
-
-### Frontend
-
-- **Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Bundler & Dev Server**: [Vite 8](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) + Custom Design System (`index.css`)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **HTTP Client**: [Axios](https://axios-http.com/)
+- **FastAPI (Python 3.12)**: Asynchronous, blisteringly fast, type-safe API engine. Handles validation, case generation, and database sessions without breaking a sweat.
+- **SQLAlchemy 2.0 & SQLite**: Zero-maintenance embedded relational database. Your confessions live locally in `courtroom.db`. No cloud data leaks, no corporate surveillance of your awkward moments.
+- **React 19 & TypeScript 6**: Strict type contracts, zero runtime bugs, modern component state.
+- **Vite 8**: Sub-second Hot Module Replacement because waiting more than 50 milliseconds for a comedy app to reload is unacceptable.
+- **Tailwind CSS v4 + Obsidian & Gold Theme**: Noir courtroom vibes, dark glassmorphism, animated stamps, parchment-style transcripts.
+- **Lucide Icons & Framer Motion**: Clean vector iconography and micro-animations that give weight to every gavel strike.
+- **Google Gemini & OpenAI Integration**: Pluggable AI generation for context-aware roasts, backed by our deterministic offline fallback engine.
 
 ---
 
-## 🏛️ Architecture & Data Flow
+## Architecture: How the Roast Pipeline Works
 
 ```mermaid
 flowchart TD
-    User([User / Browser]) -->|Submit Confession + Personality| ReactApp[React + TypeScript UI]
-    ReactApp -->|POST /api/trial| FastAPI[FastAPI Backend]
-
-    FastAPI --> Orchestrator{Trial Orchestrator}
-
-    Orchestrator -->|Check Keys| AIProvider{AI Configured?}
-    AIProvider -->|Yes: Gemini / OpenAI| AIModel[LLM Trial Generator]
-    AIProvider -->|No / Fallback| TemplateEngine[Procedural Rule Engine]
-
-    AIModel --> Normalizer[Data Normalization & Scoring]
-    TemplateEngine --> Normalizer
-
+    User([The Defendant]) -->|Submits Confession + Vibe| Frontend[React 19 + TypeScript UI]
+    Frontend -->|POST /api/trial| Backend[FastAPI Router]
+    
+    Backend --> Orchestrator{Trial Orchestrator}
+    
+    Orchestrator --> KeyCheck{API Key Present?}
+    KeyCheck -->|Yes: Gemini / OpenAI| AIWorker[LLM Comedy Generator]
+    KeyCheck -->|No / Rate Limited| TemplateWorker[Offline Procedural Joke Engine]
+    
+    AIWorker --> Normalizer[Data Normalization & Clamping]
+    TemplateWorker --> Normalizer
+    
     Normalizer --> DB[(SQLite: courtroom.db)]
-    Normalizer -->|Structured Trial Result| FastAPI
-
-    FastAPI -->|JSON Response| ReactApp
-    ReactApp --> TrialStages[Animated Trial Stage Flow]
-    TrialStages --> RevealVerdict[Gavel & Stamp Animation]
-    TrialStages --> Archive[Saved to Case Archive]
+    Normalizer -->|Structured Verdict Payload| Backend
+    
+    Backend -->|JSON 200 OK| Frontend
+    Frontend --> CourtStages[Opening -> Evidence -> Arguments -> Verdict]
+    CourtStages --> FinalStamp[Screen-Shaking Animated Stamp]
 ```
 
 ---
 
-## 📁 Repository Structure
+## Repository Layout
 
 ```
 Courtroom of Stupid Decisions/
-├── README.md                  # Complete project documentation
-├── file.md                    # Original concept design & feature spec
-├── start.ps1                  # PowerShell one-click dev environment launcher
+├── README.md                  # This exact document
+├── file.md                    # The original product manifesto
+├── start.ps1                  # One-click Windows launch script
+├── .gitignore                 # Keeps your node_modules and .env out of git
 │
 ├── backend/                   # Python FastAPI Backend
-│   ├── main.py                # App entrypoint, CORS & startup events
-│   ├── config.py              # Pydantic Settings & environment variables
-│   ├── database.py            # SQLAlchemy models & database session setup
-│   ├── schemas.py             # Pydantic models for API request/response validation
-│   ├── courtroom.db           # SQLite database file (auto-generated)
-│   ├── requirements.txt       # Python dependencies
-│   ├── .env.example           # Environment template
-│   ├── .env                   # Local secrets (API keys)
+│   ├── main.py                # FastAPI entry, CORS middleware, table creation
+│   ├── config.py              # Pydantic Settings reading .env
+│   ├── database.py            # SQLAlchemy engine, session maker, Case model
+│   ├── schemas.py             # Pydantic models for incoming & outgoing payloads
+│   ├── courtroom.db           # SQLite database file (created on boot)
+│   ├── requirements.txt       # Python package list
+│   ├── .env.example           # Configuration template
 │   │
-│   ├── engine/                # The Trial Generation Engine
-│   │   ├── orchestrator.py    # Coordinates AI + template fallback + normalization
-│   │   ├── ai_generator.py    # Gemini & OpenAI prompt execution & JSON parsing
-│   │   └── templates.py       # Deterministic keyword classification & procedural jokes
+│   ├── engine/                # Core Comedy Intelligence
+│   │   ├── orchestrator.py    # Coordinates AI vs template fallbacks
+│   │   ├── ai_generator.py    # Prompt chains for Gemini & OpenAI
+│   │   └── templates.py       # Offline weighted randomness & pre-written roasts
 │   │
 │   └── routers/
-│       └── trials.py          # REST API endpoints (/api/trial, /api/cases, etc.)
+│       └── trials.py          # REST endpoints (/api/trial, /api/cases, etc.)
 │
-└── frontend/                  # React + TypeScript Frontend
-    ├── package.json           # Frontend dependencies & scripts
-    ├── vite.config.ts         # Vite bundler configuration
-    ├── index.html             # HTML entry point with custom typography
+└── frontend/                  # React 19 Frontend
+    ├── package.json           # npm dependencies
+    ├── vite.config.ts         # Vite build configuration
+    ├── index.html             # HTML root shell
     │
     └── src/
-        ├── main.tsx           # React root renderer
-        ├── App.tsx            # Main shell, view state switcher, top navigation
-        ├── index.css          # Burgundy & Gold courtroom theme, animations, stamps
-        ├── api.ts             # Axios API client functions
-        ├── types.ts           # Shared TypeScript interfaces & types
+        ├── main.tsx           # React DOM root mounting
+        ├── App.tsx            # Main controller, header, active view router
+        ├── index.css          # Courtroom design tokens, dark themes, stamp keyframes
+        ├── api.ts             # Axios service layer
+        ├── types.ts           # TypeScript interfaces for trial data
         │
         └── components/
-            ├── ConfessionForm.tsx  # Confession input, personality radio, random button
-            ├── TrialView.tsx       # Multi-stage trial view, evidence, arguments, stamps
-            └── CaseHistory.tsx     # Case archive, severity chips, delete & inspect
+            ├── ConfessionForm.tsx  # Confession textarea, radio picks, randomizer
+            ├── TrialView.tsx       # Interactive trial steps, evidence cards, gavel stamp
+            └── CaseHistory.tsx     # Docket list, delete actions, past verdict inspect
 ```
 
 ---
 
-## 🚀 Quick Start
+## Quick Start: Run This Disaster
 
-### Prerequisites
-
-- **Python**: 3.10+ (Check with `python --version`)
-- **Node.js**: 18+ (Check with `node --version`)
-- **PowerShell** (Windows) or **Bash** (macOS / Linux)
+### Requirements
+- **Python**: 3.10 or higher (`python --version`)
+- **Node.js**: 18.0 or higher (`node --version`)
+- A working sense of humor and at least one embarrassing memory.
 
 ---
 
-### Option A: One-Click Launch (Windows PowerShell)
+### Method 1: The One-Click Way (Windows PowerShell)
 
-Run the included automated launch script from the root folder:
+Just run this from the project root:
 
 ```powershell
 .\start.ps1
 ```
 
-This will automatically open two windows:
-
-- 🟢 **Backend**: `http://localhost:8000`
-- 🟢 **Frontend**: `http://localhost:5173`
-- 📘 **Swagger UI**: `http://localhost:8000/docs`
+This launches the backend on port 8000 and the frontend on port 5173 in parallel terminals.
 
 ---
 
-### Option B: Manual Setup
+### Method 2: The Manual Way
 
-#### 1. Backend Setup
+#### Step 1: Fire Up the Backend
 
-```bash
-# Navigate to the backend directory
+```powershell
 cd backend
 
-# (Recommended) Create and activate a virtual environment
+# Setup your virtual environment
 python -m venv venv
-
-# Windows:
 .\venv\Scripts\activate
-# macOS/Linux:
-# source venv/bin/activate
 
-# Install dependencies
+# Install the dependencies
 pip install -r requirements.txt
 
-# Create your .env file
-copy .env.example .env    # On Windows
-# cp .env.example .env    # On macOS/Linux
+# Create your config file
+copy .env.example .env
 
-# Start the FastAPI server
+# Run the API server
 uvicorn main:app --reload --port 8000
 ```
 
-The backend server is now listening at **`http://localhost:8000`**.
+The backend is now live at `http://localhost:8000`. Interactive docs are at `http://localhost:8000/docs`.
 
-#### 2. Frontend Setup
+#### Step 2: Spin Up the Frontend
 
-Open a second terminal window:
+Open a new terminal window:
 
-```bash
-# Navigate to the frontend directory
+```powershell
 cd frontend
 
-# Install npm packages
+# Install packages
 npm install
 
 # Start Vite dev server
 npm run dev
 ```
 
-The application is now accessible at **`http://localhost:5173`**.
+Open your browser and navigate to `http://localhost:5173`. Step up to the stand.
 
 ---
 
-## ⚙️ Configuration & Environment
+## Environment & Secrets
 
-The backend reads settings from `backend/.env`. A template is provided in `backend/.env.example`:
+Edit `backend/.env` to configure your AI provider of choice:
 
 ```ini
-# ==========================================
-# Courtroom of Stupid Decisions Config
-# ==========================================
-
-# Choose your AI provider: "gemini" or "openai"
+# Pick one provider: "gemini" or "openai"
 AI_PROVIDER=gemini
 
-# Option A: Google Gemini (Free API Key available at https://aistudio.google.com)
-GEMINI_API_KEY=your_gemini_api_key_here
+# Google Gemini (Free tier available at https://aistudio.google.com)
+GEMINI_API_KEY=your_key_here
 AI_MODEL=gemini-1.5-flash
 
-# Option B: OpenAI (https://platform.openai.com)
-OPENAI_API_KEY=your_openai_api_key_here
+# Or OpenAI (https://platform.openai.com)
+OPENAI_API_KEY=your_key_here
 # AI_MODEL=gpt-4o-mini
 
-# Application Settings
+# Database and CORS
 DATABASE_URL=sqlite:///./courtroom.db
 CORS_ORIGINS=["http://localhost:5173","http://localhost:3000"]
 ```
 
-> [!NOTE]
-> **No API Key? No Problem.**
-> If `GEMINI_API_KEY` and `OPENAI_API_KEY` are left blank, the app **automatically and silently routes all requests through the built-in procedural engine**. Trials, evidence, and verdicts will still generate instantaneously!
+> **Pro Tip:**
+> If you leave both API keys empty, the system does not crash or complain. It silently falls back to the template engine so you can still roast your friends without spending a single cent.
 
 ---
 
-## 📡 API Reference
+## API Reference (For the Nerds)
 
-When the backend is running, full interactive OpenAPI documentation is available at:
-
+Full interactive OpenAPI documentation is generated automatically at:
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`
 
-### Primary Endpoints
+### Route Summary
 
-| Method   | Endpoint                 | Description                             | Sample Request / Param                                    |
-| -------- | ------------------------ | --------------------------------------- | --------------------------------------------------------- |
-| `POST`   | `/api/trial`             | Submit a confession and trigger a trial | `{"confession": "...", "personality": "brutally_honest"}` |
-| `GET`    | `/api/cases`             | Retrieve paginated case archive         | `?skip=0&limit=20`                                        |
-| `GET`    | `/api/cases/{case_id}`   | Retrieve full trial details for a case  | `case_id: "550e8400-..."`                                 |
-| `DELETE` | `/api/cases/{case_id}`   | Dismiss and purge a case from archive   | `case_id: "550e8400-..."`                                 |
-| `GET`    | `/api/confession/random` | Generate a random confession string     | _None_                                                    |
-| `GET`    | `/api/health`            | Health check and server status          | _None_                                                    |
+| Method | Route | Description | Payload / Query |
+|---|---|---|---|
+| `POST` | `/api/trial` | Process a confession and return the full trial | JSON: `confession`, `personality` |
+| `GET` | `/api/cases` | Fetch all historical cases from the docket | `?skip=0&limit=20` |
+| `GET` | `/api/cases/{case_id}` | Retrieve complete details of a specific case | Path parameter: `case_id` (UUID) |
+| `DELETE` | `/api/cases/{case_id}` | Purge an embarrassing record from history | Path parameter: `case_id` (UUID) |
+| `GET` | `/api/confession/random` | Return a pre-packaged stupid confession | None |
+| `GET` | `/api/health` | Check if the court is currently in session | None |
 
----
-
-### Sample Request & Response
+### Sample Trial Payload
 
 #### Request:
-
 `POST /api/trial`
 
 ```json
 {
-  "confession": "I waved back enthusiastically at a stranger who was actually waving at their dog behind me.",
-  "personality": "brutally_honest"
+  "confession": "I spent 40 minutes rehearsing an argument in the shower, brought it up at dinner, stuttered on the first sentence, and apologized.",
+  "personality": "unhinged"
 }
 ```
 
-#### Response (`200 OK`):
+#### Response (200 OK):
 
 ```json
 {
-  "id": "e6a2fc51-09df-4b72-a169-0e70ca2b0693",
-  "confession": "I waved back enthusiastically at a stranger who was actually waving at their dog behind me.",
-  "category": "social_embarrassment",
-  "personality": "brutally_honest",
+  "id": "7f8b9c2a-45d1-4e89-b123-9876543210ab",
+  "confession": "I spent 40 minutes rehearsing an argument in the shower, brought it up at dinner, stuttered on the first sentence, and apologized.",
+  "category": "unnecessary_overthinking",
+  "personality": "unhinged",
   "judge_name": "Judge Reginald 'Randy' Trash-Panda III",
   "prosecutor_name": "Victoria 'Vicky' Overkill",
   "defense_name": "Greg Bumble, Esq.",
   "evidence": [
     {
-      "title": "The Over-Extended Arm",
-      "description": "Witness testimony confirms the wave had a full 180-degree radius of unearned confidence.",
+      "title": "Water Bill Exhibit",
+      "description": "City records showing 40 gallons of hot water consumed solely to lose an imaginary debate against tile grout.",
       "exhibit_label": "Exhibit A"
     },
     {
-      "title": "The Fake Hair-Tuck Transition",
-      "description": "CCTV footage reveals defendant transitioned immediately into pretending to scratch their neck for 40 seconds.",
+      "title": "The Immediate Retreat",
+      "description": "Eye witnesses confirm defendant muttered 'nevermind sorry' before anyone had even responded.",
       "exhibit_label": "Exhibit B"
     }
   ],
   "prosecution_arguments": [
-    "Your Honor, the defendant stole affectionate body language intended for a golden retriever!",
-    "The sheer audacity of assuming you were the most interesting object in a 50-foot radius is criminal."
+    "Your Honor, the defendant committed premeditated vocal treason against their own vocal cords!",
+    "This was not a conversation. This was a preemptive unconditional surrender."
   ],
   "defense_arguments": [
-    "My client is also good at fetching, so technically the wave was 40% applicable!",
-    "Your Honor, if waving at dogs is wrong, none of us are truly innocent."
+    "Your Honor, my client was simply testing the acoustics of the dining room!",
+    "Is it really a crime to apologize for existing? Actually, wait, don't answer that."
   ],
   "courtroom_events": [
     {
-      "type": "objection",
-      "character": "Vicky",
-      "description": "OBJECTION! Defense is barking up the completely wrong tree!"
+      "type": "event",
+      "character": "Judge Randy",
+      "description": "The judge climbed onto the desk, knocked over the water pitcher, and hissed at the court reporter."
     }
   ],
   "verdict": "GUILTY",
-  "sentence": "You are sentenced to re-live this exact moment at 3 AM for the next five years.",
-  "severity_score": 8,
-  "created_at": "2026-10-18T10:45:00Z"
+  "sentence": "You are sentenced to narrate every decision you make in a formal British accent for six months.",
+  "severity_score": 9,
+  "created_at": "2026-10-18T10:30:00Z"
 }
 ```
 
 ---
 
-## 🎨 Design Philosophy & Aesthetics
+## How to Add Your Own Jokes & Crimes
 
-The user interface was crafted with a deliberate visual identity:
+Want to expand the courtroom's repertoire? It takes five minutes:
 
-- **Courtroom Noir & Parchment Palette**:
-  - Background: Deep Judicial Obsidian (`#0d0a0e`) & Burgundy undertones (`#1a0f18`)
-  - Accent Metals: Antique Gold (`#c9a227`) and Brass gradients
-  - Parchment Accents: Off-white weathered legal paper (`#f4ecd8`)
-- **Typography**:
-  - Headings: Serif display font (_Cinzel_ / _Playfair Display_)
-  - Legal Transcripts: Monospaced typewriter font (_Courier Prime_ / _JetBrains Mono_)
-- **Micro-Interactions**:
-  - Animated gavel and stamp physics
-  - Progressive argument disclosure tab system
-  - Stupidity severity progress meters with glow effects
-  - Frosted glass cards with warm golden borders
+1. **Add new crime templates**: Open [templates.py](file:///c:/Users/ASUS/OneDrive/Desktop/MY%20FUCKED%20UP%20LIFE/Courtroom%20of%20Stupid%20Decisions/backend/engine/templates.py) and add new keyword mappings under `CATEGORIES`.
+2. **Add absurd sentences**: Append your favorite ridiculous punishments to the `SENTENCES` list in the same file.
+3. **Add courtroom chaos**: Drop new objection and interruption scripts into the `EVENTS` array.
+4. **Tweak AI Prompts**: Head over to [ai_generator.py](file:///c:/Users/ASUS/OneDrive/Desktop/MY%20FUCKED%20UP%20LIFE/Courtroom%20of%20Stupid%20Decisions/backend/engine/ai_generator.py) to crank up the sarcasm level in the system instructions.
 
 ---
 
-## 🧪 Testing & Validation
+## Roadmap
 
-### Backend Verification
-
-Run unit checks on the trial generation logic:
-
-```bash
-cd backend
-python -c "from engine.templates import generate_trial_from_templates; print(generate_trial_from_templates('I spilled coffee on my cat', 'unhinged')['verdict'])"
-```
-
-### Frontend Typecheck & Build
-
-Validate all TypeScript types and Vite bundle integrity:
-
-```bash
-cd frontend
-npm run build
-```
+- [ ] **Exportable Verdict Cards**: Generate shareable PNG cards via Python Pillow so you can post your L on social media.
+- [ ] **Soundboard Integration**: Dramatic gavel thuds, Phoenix Wright style OBJECTION stingers, and raccoon chittering audio.
+- [ ] **Public Shame Gallery / Jury Voting**: Let random strangers on the web vote on whether your confession was actually guilty or justified.
+- [ ] **Multiplayer Roast Offs**: Two users enter the same petty argument, present their cases, and let Judge Randy pick who was in the wrong.
 
 ---
 
-## 🗺️ Roadmap & Future Additions
+## Legal Notice
 
-- [ ] **🖼️ Shareable Graphic Verdict Cards**: Generate branded PNG images of verdicts using Pillow to share directly to Instagram, X (Twitter), and Reddit.
-- [ ] **🔊 Audio Effects & Voice Lines**: Sound effects for gavel strikes, objections, paper shuffles, and AI-voiced character dialogue.
-- [ ] **👥 Community Jury Mode**: Allow visitors to vote "Guilty" or "Not Guilty" on anonymous community submissions.
-- [ ] **⚔️ Multiplayer Court Battles**: Challenge a friend to enter their side of a petty argument and let Judge Randy pick a winner.
-- [ ] **🎖️ Offender Badges**: Unlock badges like _Repeat Offender_, _Public Menace_, and _Certified Overthinker_.
-
----
-
-## 🤝 Contributing
-
-Contributions to the Courtroom are welcome! Here is how you can help:
-
-1. **Fork the Repository**
-2. **Create a Feature Branch** (`git checkout -b feature/absurd-sentences`)
-3. **Add New Content**:
-   - Add new jokes or categories in `backend/engine/templates.py`
-   - Add new courtroom events or characters in `backend/schemas.py` & `backend/engine/`
-4. **Commit Your Changes** (`git commit -m 'feat: Add 10 new late-night shopping crimes'`)
-5. **Push to the Branch** (`git push origin feature/absurd-sentences`)
-6. **Open a Pull Request**
-
----
-
-## ⚖️ Legal Disclaimer
-
-_All trials, charges, verdicts, and sentences generated by this software are purely fictional and intended solely for comedic and entertainment purposes. Judge Reginald "Randy" Trash-Panda III is a raccoon and does not possess a valid state bar license in any jurisdiction. The creators assume no legal liability for any lingering feelings of awkwardness or midnight memories._
+All verdicts, sentences, character dialogues, and criminal classifications produced by this software are entirely fictional and hold zero legal authority in any earthly court of law. Judge Reginald "Randy" Trash-Panda III is an uncertified wild animal prone to rummaging through compost bins. The developers accept no liability for bruised egos, sleepless nights, or sudden recollections of that awkward thing you did in middle school.
 
 ---
 
 <div align="center">
 
-Made with 🦝, 🔨, and questionable decisions.
+Built for anyone who has ever said "you too" to a waiter.
 
-**[Back to Top ↑](#-courtroom-of-stupid-decisions)**
+[Back to Top](#courtroom-of-stupid-decisions)
 
 </div>
