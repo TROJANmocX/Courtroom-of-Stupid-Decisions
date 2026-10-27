@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { TrialRequest, TrialResult, CaseSummary } from './types';
+import type { TrialRequest, TrialResult, CaseSummary } from './types';
 
 const api = axios.create({
   baseURL: '/api',

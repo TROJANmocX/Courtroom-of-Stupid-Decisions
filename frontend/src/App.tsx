@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { TrialResult } from './types';
+import { useState } from 'react';
+import type { TrialResult } from './types';
 import { fetchCase } from './api';
 import ConfessionForm from './components/ConfessionForm';
 import TrialView from './components/TrialView';
@@ -10,7 +10,6 @@ type View = 'home' | 'loading' | 'trial' | 'history' | 'case';
 export default function App() {
   const [view, setView] = useState<View>('home');
   const [currentTrial, setCurrentTrial] = useState<TrialResult | null>(null);
-  const [viewingCaseId, setViewingCaseId] = useState<string | null>(null);
   const [loadError, setLoadError] = useState('');
 
   const handleTrialComplete = (result: TrialResult) => {
@@ -20,13 +19,13 @@ export default function App() {
   };
 
   const handleViewCase = async (id: string) => {
-    setViewingCaseId(id);
     setView('loading');
+    setLoadError('');
     try {
       const result = await fetchCase(id);
       setCurrentTrial(result);
       setView('trial');
-    } catch (e) {
+    } catch {
       setLoadError('Could not load this case. The records may have been lost.');
       setView('history');
     }
@@ -126,10 +125,30 @@ export default function App() {
 
         {/* Case History */}
         {view === 'history' && (
-          <CaseHistory
-            onBack={() => setView(currentTrial ? 'trial' : 'home')}
-            onViewCase={handleViewCase}
-          />
+          <div>
+            {loadError && (
+              <div style={{
+                background: 'rgba(224, 82, 82, 0.1)',
+                border: '1px solid rgba(224, 82, 82, 0.3)',
+                borderRadius: '8px',
+                padding: '12px 16px',
+                color: 'var(--color-guilty)',
+                fontSize: '13px',
+                marginBottom: '20px',
+                maxWidth: '720px',
+                margin: '0 auto 20px',
+              }}>
+                ⚖️ {loadError}
+              </div>
+            )}
+            <CaseHistory
+              onBack={() => {
+                setLoadError('');
+                setView(currentTrial ? 'trial' : 'home');
+              }}
+              onViewCase={handleViewCase}
+            />
+          </div>
         )}
       </main>
 

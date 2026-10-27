@@ -38,9 +38,9 @@ Generate a complete fictional courtroom trial as a JSON object with EXACTLY this
   "prosecutor_name": "Victoria 'Vicky' Overkill",
   "defense_name": "Greg Bumble",
   "evidence": [
-    {{{ "title": "...", "description": "...", "exhibit_label": "Exhibit A" }}},
-    {{{ "title": "...", "description": "...", "exhibit_label": "Exhibit B" }}},
-    {{{ "title": "...", "description": "...", "exhibit_label": "Exhibit C" }}}
+    {{ "title": "...", "description": "...", "exhibit_label": "Exhibit A" }},
+    {{ "title": "...", "description": "...", "exhibit_label": "Exhibit B" }},
+    {{ "title": "...", "description": "...", "exhibit_label": "Exhibit C" }}
   ],
   "prosecution_arguments": [
     "First argument from Vicky (dramatic, aggressive, one paragraph)",
@@ -53,9 +53,9 @@ Generate a complete fictional courtroom trial as a JSON object with EXACTLY this
     "Greg's closing (accidentally votes for conviction)"
   ],
   "courtroom_events": [
-    {{{ "type": "objection", "character": "Vicky", "description": "..." }}},
-    {{{ "type": "event", "character": "Judge Randy", "description": "..." }}},
-    {{{ "type": "interruption", "character": "Greg", "description": "..." }}}
+    {{ "type": "objection", "character": "Vicky", "description": "..." }},
+    {{ "type": "event", "character": "Judge Randy", "description": "..." }},
+    {{ "type": "interruption", "character": "Greg", "description": "..." }}
   ],
   "verdict": "GUILTY" or "MOSTLY GUILTY" or "NOT GUILTY",
   "sentence": "An absurd, funny, creative punishment that fits the crime comedically. 2-3 sentences."
@@ -82,16 +82,19 @@ Examples of tone:
 
 async def generate_trial_with_ai(confession: str, personality: str) -> Optional[dict]:
     """Try to generate trial data using configured AI provider."""
-    prompt = TRIAL_PROMPT_TEMPLATE.format(
-        confession=confession,
-        personality=personality,
-    )
-
     provider = settings.AI_PROVIDER.lower()
 
     if provider == "gemini" and settings.GEMINI_API_KEY:
+        prompt = TRIAL_PROMPT_TEMPLATE.format(
+            confession=confession,
+            personality=personality,
+        )
         return await _generate_with_gemini(prompt)
     elif provider == "openai" and settings.OPENAI_API_KEY:
+        prompt = TRIAL_PROMPT_TEMPLATE.format(
+            confession=confession,
+            personality=personality,
+        )
         return await _generate_with_openai(prompt)
     else:
         return None  # Will fall back to template engine

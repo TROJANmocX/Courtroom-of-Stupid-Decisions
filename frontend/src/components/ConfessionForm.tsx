@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback, type FormEvent } from 'react';
 import { submitTrial, fetchRandomConfession } from '../api';
-import { TrialResult, Personality } from '../types';
+import type { TrialResult, Personality } from '../types';
 import { Shuffle, Gavel } from 'lucide-react';
 
 interface Props {
@@ -30,7 +30,7 @@ export default function ConfessionForm({ onTrialComplete }: Props) {
 
   const placeholderIdx = Math.floor(Date.now() / 5000) % PLACEHOLDER_CONFESSIONS.length;
 
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault();
     if (!confession.trim() || confession.trim().length < 10) {
       setError('The court requires more details. Please elaborate on your crime.');

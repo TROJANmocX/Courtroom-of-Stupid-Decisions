@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchCases, deleteCase } from '../api';
-import { CaseSummary, Verdict } from '../types';
+import type { CaseSummary, Verdict } from '../types';
 import { Trash2, Eye, ArrowLeft } from 'lucide-react';
 
 interface Props {

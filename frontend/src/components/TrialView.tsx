@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { TrialResult, Verdict } from '../types';
-import { Scale, FileText, AlertTriangle, Zap, Stamp } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import type { TrialResult, Verdict } from '../types';
+import { Scale, FileText, Stamp } from 'lucide-react';
 
 interface Props {
   result: TrialResult;
